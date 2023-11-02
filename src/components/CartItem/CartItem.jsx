@@ -29,16 +29,15 @@ export default function CartItem ({ item, cartItems, setCartItems }) {
                         <div className="customeDrinkContainer">
                             <span className='name'>Custom Drink: {item.name} - ${item.price}</span>
                             <span className="desc">Glass: {item.glass.title}</span>
-                            <span className="desc">Spirits: {item.spirits.map((spirit) => (
-                                <span>{spirit.label} </span>
+                            <span className="desc">Spirits: {item.spirits.map((spirit, index) => (
+                                <span key={index}>{spirit.label}{index === item.spirits.length - 1 ? '' : ', '}</span>
                             ))}</span>
-                            <span className="desc">Mixers: {item.mixers.map((mixer) => (
-                                <span>{mixer.label} </span>
+                            <span className="desc">Mixers: {item.mixers.map((mixer, index) => (
+                                <span key={index}>{mixer.label}{index === item.mixers.length - 1 ? '' : ', '}</span>
                             ))}</span>
                             <span className="desc">Garnish: {item.garnishes.label}</span>
                         </div>
                     )
-                    
                     }
                 </div>
                 <button onClick={() => removeFromCart(item)}>X</button>
