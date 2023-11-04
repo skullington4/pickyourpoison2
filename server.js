@@ -1,9 +1,10 @@
 import express from 'express'
+import {} from 'dotenv/config'
+import './config/database.js'
+import Prisma from '@prisma/client'
+
 
 const app = express()
-
-require('dotenv').config()
-require('./config/database')
 
 
 

@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaShoppingCart, FaHome } from 'react-icons/fa';
 
-function NavBar() {
+function NavBar( {cartItems} ) {
+    
     return (
         <nav>
-            <Link to="/">Home</Link>
+            <Link to="/"> <FaHome> </FaHome></Link>
             <Link to="/menu">Menu</Link>
             <Link to="/create">Create</Link>
-            <Link to="/cart">Cart</Link>
+            <Link to="/cart">
+                <FaShoppingCart />
+                {cartItems.length > 0 && <span>{cartItems.length}</span>}
+            </Link>
         </nav>
     );
 }

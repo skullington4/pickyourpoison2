@@ -1,10 +1,10 @@
 import React from 'react';
 import NavBar from '../../components/NavBar/NavBar';
 import { Routes, Route } from 'react-router-dom';
-import Home from '../Home/Home';
-import Menu from '../Menu/Menu';
-import Create from '../Create/Create';
-import Cart from '../Cart/Cart';
+import Home from '../Home/Home.jsx';
+import Menu from '../Menu/Menu.jsx';
+import Create from '../Create/Create.jsx';
+import Cart from '../Cart/Cart.jsx';
 import './App.css';
 import glasses from '../../Data/glasses';
 
@@ -17,7 +17,7 @@ export default function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <NavBar/>
+          <NavBar cartItems={cartItems}/>
       </header>
         
         <Routes>
