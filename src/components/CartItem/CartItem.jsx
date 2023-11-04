@@ -30,12 +30,12 @@ export default function CartItem ({ item, cartItems, setCartItems }) {
                             <span className='name'>Custom Drink: {item.name} - ${item.price}</span>
                             <span className="desc">Glass: {item.glass.title}</span>
                             <span className="desc">Spirits: {item.spirits.map((spirit, index) => (
-                                <span key={index}>{spirit.value}{index === item.spirits.length - 1 ? '' : ', '}</span>
+                                <span key={index}>{spirit}{index === item.spirits.length - 1 ? '' : ', '}</span>
                             ))}</span>
                             <span className="desc">Mixers: {item.mixers.map((mixer, index) => (
-                                <span key={index}>{mixer.value}{index === item.mixers.length - 1 ? '' : ', '}</span>
+                                <span key={index}>{mixer}{index === item.mixers.length - 1 ? '' : ', '}</span>
                             ))}</span>
-                            <span className="desc">Garnish: {item.garnishes.value}</span>
+                            <span className="desc">Garnish: {item.garnishes}</span>
                         </div>
                     )
                     }

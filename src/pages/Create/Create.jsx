@@ -13,54 +13,54 @@ const glassOptions = glasses.map((glass, index) => ({
 }));
 
 const SpiritIngredientOptions = [
-    { value: 'Aperol', label: 'Aperol' },
-    { value: 'Bourbon', label: 'Bourbon' },
-    { value: 'Brandy', label: 'Brandy' },
-    { value: 'Gin', label: 'Gin' },
-    { value: 'Mezcal', label: 'Mezcal' },
-    { value: 'Rum', label: 'Rum' },
-    { value: 'Scotch', label: 'Scotch' },
-    { value: 'Tequila', label: 'Tequila' },
-    { value: 'Vodka', label: 'Vodka' },
-    { value: 'Whiskey', label: 'Whiskey' },
-    { value: 'Wine', label: 'Wine' },
-    { value: 'Champagne', label: 'Champagne' },
-    { value: 'Liqueur', label: 'Liqueur' },
+    'Aperol',
+    'Bourbon',
+    'Brandy',
+    'Gin',
+    'Mezcal',
+    'Rum',
+    'Scotch',
+    'Tequila',
+    'Vodka',
+    'Whiskey',
+    'Wine',
+    'Champagne',
+    'Liqueur'
 ];
 
 const MixerIngredientOptions = [
-    { value: 'Bitters', label: 'Bitters' },
-    { value: 'Coke', label: 'Coke' },
-    { value: 'Cranberry', label: 'Cranberry' },
-    { value: 'Diet Coke', label: 'Diet Coke' },
-    { value: 'Ginger Ale', label: 'Ginger Ale' },
-    { value: 'Grenadine', label: 'Grenadine' },
-    { value: 'Lemon Juice', label: 'Lemon Juice' },
-    { value: 'Lime Juice', label: 'Lime Juice' },
-    { value: 'Orange Juice', label: 'Orange Juice' },
-    { value: 'Pineapple Juice', label: 'Pineapple Juice' },
-    { value: 'Soda Water', label: 'Soda Water' },
-    { value: 'Sweet Vermouth', label: 'Sweet Vermouth' },
-    { value: 'Syrup', label: 'Syrup' },
-    { value: 'Tonic', label: 'Tonic' },
-    { value: 'Triple Sec', label: 'Triple Sec' },
-    { value: 'Vermouth', label: 'Vermouth' },
-    { value: 'Water', label: 'Water' },
+    'Bitters',
+    'Coke',
+    'Cranberry',
+    'Diet Coke',
+    'Ginger Ale',
+    'Grenadine',
+    'Lemon Juice',
+    'Lime Juice',
+    'Orange Juice',
+    'Pineapple Juice',
+    'Soda Water',
+    'Sweet Vermouth',
+    'Syrup',
+    'Tonic',
+    'Triple Sec',
+    'Vermouth',
+    'Water'
 ];
 
 const GarnishIngredientOptions = [
-    { value: 'Orange Peel', label: 'Orange Peel' },
-    { value: 'Orange Slice', label: 'Orange Slice' },
-    { value: 'Lemon', label: 'Lemon Slice' },
-    { value: 'Lime', label: 'Lime Slice' },
-    { value: 'Cherry', label: 'Cherry' },
-    { value: 'Olive', label: 'Olive' },
-    { value: 'Pineapple', label: 'Pineapple' },
-    { value: 'Strawberry', label: 'Strawberry' },
-    { value: 'Mint', label: 'Mint' },
-    { value: 'Cinnamon', label: 'Cinnamon' },
-    { value: 'Sugar', label: 'Sugar' },
-    { value: 'Salt', label: 'Salt' },
+    'Orange Peel',
+    'Orange Slice',
+    'Lemon',
+    'Lime',
+    'Cherry',
+    'Olive',
+    'Pineapple',
+    'Strawberry',
+    'Mint',
+    'Cinnamon',
+    'Sugar',
+    'Salt',
 ];
 
     const [selectedGlass, setSelectedGlass] = React.useState(null);
@@ -99,7 +99,7 @@ const GarnishIngredientOptions = [
             glass: selectedGlass,
             spirits: selectedSpirits,
             mixers: selectedMixers,
-            garnishes: selectedGarnishes.value,
+            garnishes: selectedGarnishes,
         };
         setCartItems([...cartItems, drink]);
         setSelectedGlass(null);
@@ -135,7 +135,7 @@ const GarnishIngredientOptions = [
                                 width: '65%',
                             })
                         }}
-                        id="spirits"
+                        id="Spirits"
                         isMulti
                         options={SpiritIngredientOptions}
                         value={selectedSpirits}

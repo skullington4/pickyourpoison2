@@ -17,7 +17,17 @@ export default function Home( { cartItems, setCartItems } ) {
       }, [])
 
         const handleAddToCart = (order) => {
-            setCartItems([...cartItems, order]);
+
+            const drink = { 
+                category: 'custom',
+                name: order.title,
+                price: order.price,
+                glass: order.glass,
+                spirits: order.spirits,
+                mixers: order.mixers,
+                garnishes: order.garnishes,
+             };
+            setCartItems([...cartItems, drink]);
         }
 
     return (
