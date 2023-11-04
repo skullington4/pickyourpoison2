@@ -22,6 +22,12 @@ const port = process.env.PORT || 3001;
 
 app.use(cors());
 
+
+app.get('/orders', async function(req, res) {
+  const orders = await prisma.order.findMany();
+  res.status(200).send(orders);
+});
+
 app.post('/orders', async function(req, res) {
   
   const title = req.body.name;

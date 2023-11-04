@@ -83,7 +83,7 @@ export default function Menu({ cartItems, setCartItems }) {
     };
 
     return (
-        <div class="top">
+        <div className="top">
             <h1>Menu</h1>
             <ul>
                 {menuItems.map((item, index) => (

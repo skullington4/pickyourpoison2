@@ -21,7 +21,7 @@ export default function App() {
       </header>
         
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home cartItems={cartItems} setCartItems={setCartItems} />} />
             <Route path="/menu" element={<Menu cartItems={cartItems} setCartItems={setCartItems} />} />
             <Route path="/create" element={<Create glasses={glasses} cartItems={cartItems} setCartItems={setCartItems}/>} />
             <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems}/>} />
