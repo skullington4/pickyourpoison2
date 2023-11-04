@@ -99,10 +99,16 @@ const GarnishIngredientOptions = [
             glass: selectedGlass,
             spirits: selectedSpirits,
             mixers: selectedMixers,
-            garnishes: selectedGarnishes,
+            garnishes: selectedGarnishes.value,
         };
         setCartItems([...cartItems, drink]);
+        setSelectedGlass(null);
+        setSelectedSpirits([]);
+        setSelectedMixers([]);
+        setSelectedGarnishes([]);
+        setDrinkName([]);
     }
+
 
     return (
         <div className="top">
@@ -114,7 +120,9 @@ const GarnishIngredientOptions = [
                 </div>
 
                 <div className="flexcenter">
-                    <Glasses setSelectedGlass={setSelectedGlass}/>
+                    <Glasses 
+                        setSelectedGlass={setSelectedGlass} 
+                    />
                 </div>
                 <div className="bigText">Ingredients</div>
 

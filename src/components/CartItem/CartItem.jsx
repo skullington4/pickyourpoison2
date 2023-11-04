@@ -1,5 +1,5 @@
 export default function CartItem ({ item, cartItems, setCartItems }) {
-    
+    console.log(item);
     const removeFromCart = (item) => {
         const newCartItems = [...cartItems];
         const index = newCartItems.indexOf(item);
@@ -30,12 +30,12 @@ export default function CartItem ({ item, cartItems, setCartItems }) {
                             <span className='name'>Custom Drink: {item.name} - ${item.price}</span>
                             <span className="desc">Glass: {item.glass.title}</span>
                             <span className="desc">Spirits: {item.spirits.map((spirit, index) => (
-                                <span key={index}>{spirit.label}{index === item.spirits.length - 1 ? '' : ', '}</span>
+                                <span key={index}>{spirit.value}{index === item.spirits.length - 1 ? '' : ', '}</span>
                             ))}</span>
                             <span className="desc">Mixers: {item.mixers.map((mixer, index) => (
-                                <span key={index}>{mixer.label}{index === item.mixers.length - 1 ? '' : ', '}</span>
+                                <span key={index}>{mixer.value}{index === item.mixers.length - 1 ? '' : ', '}</span>
                             ))}</span>
-                            <span className="desc">Garnish: {item.garnishes.label}</span>
+                            <span className="desc">Garnish: {item.garnishes.value}</span>
                         </div>
                     )
                     }
