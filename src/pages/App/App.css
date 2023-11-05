@@ -154,7 +154,6 @@ nav a {
   align-items: center;
   margin: 1vmin;
   font-size: 3vmin;
-  border: 1px solid black;
   height: min-content;
   width: 766px;
 }
@@ -166,6 +165,10 @@ nav a {
   align-items: center;
   margin: 5vmin;
   font-size: 3vmin;
+
+}
+
+.border {
   border: 1px solid black;
 }
 

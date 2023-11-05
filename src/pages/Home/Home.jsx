@@ -36,7 +36,7 @@ export default function Home( { cartItems, setCartItems } ) {
             <p>Our bar offers a wide selection of drinks and a cozy atmosphere for you to enjoy.</p>
 
             {orders.map((order, index) => (
-            <div className="customeDrinkContainer">
+            <div className="customeDrinkContainer border">
                 <span className='name'>The "{order.title}" - ${order.price}</span>
                 <span className="desc">Glass: {order.glass}</span>
                 <span className="desc">Spirits: {order.spirits.map((spirit, index) => (

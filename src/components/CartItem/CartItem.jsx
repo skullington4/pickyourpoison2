@@ -12,7 +12,7 @@ export default function CartItem ({ item, cartItems, setCartItems }) {
     return (
         <>
         
-        <div className='cart-item'>   
+        <div className='cart-item border'>   
             <div className='cart-item-details'>
                 <div className="row">
                     {item.category === 'Cocktails' ? (
@@ -28,7 +28,7 @@ export default function CartItem ({ item, cartItems, setCartItems }) {
                     ) : (
                         <div className="customeDrinkContainer">
                             <span className='name'>Custom Drink: {item.name} - ${item.price}</span>
-                            <span className="desc">Glass: {item.glass.title}</span>
+                            <span className="desc">Glass: {item.glass}</span>
                             <span className="desc">Spirits: {item.spirits.map((spirit, index) => (
                                 <span key={index}>{spirit}{index === item.spirits.length - 1 ? '' : ', '}</span>
                             ))}</span>

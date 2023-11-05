@@ -31,14 +31,14 @@ app.get('/orders', async function(req, res) {
 app.post('/orders', async function(req, res) {
   
   const title = req.body.name;
-  const glass = req.body.glass.title;
+  const glass = req.body.glass;
   const spirits = [];
   req.body.spirits.forEach(spirit => {
-    spirits.push(spirit.value);
+    spirits.push(spirit);
   });
   const mixers = [];
   req.body.mixers.forEach(mixer => {
-    mixers.push(mixer.value);
+    mixers.push(mixer);
   });
   const garnishes = req.body.garnishes;
   const price = req.body.price;
