@@ -88,8 +88,7 @@ export default function Menu({ cartItems, setCartItems }) {
             <ul>
                 {menuItems.map((item, index) => (
                     <li className='menuItems' key={index}>
-                        <span>{item.name}</span>
-                        <span>${Number(item.price)}</span>
+                        <span>{item.name} - ${Number(item.price)}</span>
                         <p>{item.description}</p>
                         <button onClick={() => addToCart(item)}>Add to Cart</button>
                     </li>

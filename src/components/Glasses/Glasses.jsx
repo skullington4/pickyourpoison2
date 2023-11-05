@@ -15,7 +15,7 @@ export default function Glasses ({selectedGlass, setSelectedGlass}) {
             {glassesData.map((glass, index) => (
                 <div className={`IndividualGlass ${glass.title}`} key={index} onClick={() => handleGlassClick(glass)}>
                     <img src={glass.image} alt={glass.title} />
-                    <h3>{glass.title}</h3>
+                    <div className='glassName'>{glass.title}</div>
                 </div>
             ))}
         </div>

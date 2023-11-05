@@ -24,7 +24,12 @@ app.use(cors());
 
 
 app.get('/orders', async function(req, res) {
-  const orders = await prisma.order.findMany();
+  const orders = await prisma.order.findMany({
+    take: 20,
+    orderBy: {
+      createdAt: 'desc'
+    }
+  });
   res.status(200).send(orders);
 });
 

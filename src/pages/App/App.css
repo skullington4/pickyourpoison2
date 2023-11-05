@@ -13,9 +13,13 @@ button {
   border: 1px solid white;
   border-radius: 5px;
   padding: 1vmin;
-  font-size: 1.5em;
+  font-size: 1em;
   margin: 1vmin;
 
+}
+
+p {
+  margin: 0;
 }
 
 .App-header {
@@ -94,7 +98,6 @@ nav a {
 
 .selected {
   border: 3px solid black;
-
 }
 
 .bigText {
@@ -186,6 +189,14 @@ nav a {
 
   .glasses img {
     height: 10vmin;
+  }
+
+  .bigText {
+    font-size: 5vmin;
+  }
+
+  .glassName {
+    font-size: 2vmin;
   }
 
 
