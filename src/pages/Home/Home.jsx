@@ -8,7 +8,7 @@ export default function Home( { cartItems, setCartItems } ) {
 
     useEffect(() => {
         async function getOrders() {
-          const result = await axios.get("http://localhost:3001/orders")
+          const result = await axios.get("http://https://pickyour-poison-d276c8edc8c1.herokuapp.com/orders")
           setOrders(result.data)
         }
         getOrders()
