@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import React from 'react';
 import axios from 'axios';
+import * as orderService from '../../utilities/order-service.js';
 
 export default function Home( { cartItems, setCartItems } ) {
     const [orders, setOrders] = useState([]);
     const [filter, setFilter] = useState('');
 
+
     useEffect(() => {
         async function getOrders() {
-          const result = await axios.get("http://localhost:3001/orders")
-          setOrders(result.data)
+          const result = await orderService.getAll();
+          setOrders(result)
         }
         getOrders()
     }, [])
@@ -32,14 +34,15 @@ export default function Home( { cartItems, setCartItems } ) {
     }
 
     const filteredOrders = orders.filter((order) => {
-        const filterLower = filter.toLowerCase();
-        return (
-            order.glass.toLowerCase().includes(filterLower)  ||
-            order.spirits.some((spirit) => spirit.toLowerCase().includes(filterLower)) ||
-            order.mixers.some((mixer) => mixer.toLowerCase().includes(filterLower)) ||
-            order.garnishes.toLowerCase().includes(filterLower)
+       const filterLower = filter.toLowerCase();
+       return (
+           order.glass.toLowerCase().includes(filterLower)  ||
+           order.spirits.some((spirit) => spirit.toLowerCase().includes(filterLower)) ||
+           order.mixers.some((mixer) => mixer.toLowerCase().includes(filterLower)) ||
+           order.garnishes.toLowerCase().includes(filterLower)
         );
     });
+
 
     return (
         <div className="top">
@@ -50,6 +53,7 @@ export default function Home( { cartItems, setCartItems } ) {
                 some of our customer's favorite custom drinks.
             </div>
             <div>
+            
                 <label htmlFor="filter">Filter by:</label>
                 <select id="filter" value={filter} onChange={handleFilterChange}>
                     <option value="">All</option>

@@ -3,10 +3,9 @@ import {} from 'dotenv/config'
 import './config/database.js'
 import path from 'path'
 import logger from 'morgan'
-import favicon from 'favicon'
 import cors from 'cors'
 import { PrismaClient } from '@prisma/client'
-
+import router from './routes/api/orders.js'
 
 
 const app = express()
@@ -22,49 +21,11 @@ const port = process.env.PORT || 3001;
 
 app.use(cors());
 
+const __dirname = path.resolve();
 
-app.get('/orders', async function(req, res) {
-  const orders = await prisma.order.findMany({
-    take: 20,
-    orderBy: {
-      createdAt: 'desc'
-    }
-  });
-  res.status(200).send(orders);
-});
+app.use(express.static(path.join(__dirname, 'build')));
 
-app.post('/orders', async function(req, res) {
-  
-  const title = req.body.name;
-  const glass = req.body.glass;
-  const spirits = [];
-  req.body.spirits.forEach(spirit => {
-    spirits.push(spirit);
-  });
-  const mixers = [];
-  req.body.mixers.forEach(mixer => {
-    mixers.push(mixer);
-  });
-  const garnishes = req.body.garnishes;
-  const price = req.body.price;
-
-  console.log(title, glass, spirits, mixers, garnishes, price);
-
-
-  const order = await prisma.order.create({
-    data: {
-      title: title,
-      glass: glass,
-      spirits: spirits,
-      mixers: mixers,
-      garnishes: garnishes,
-      price: price
-    }
-  });
-
-  res.status(200).send(order);
-});
-
+app.use('/api/orders', router);
 
 
 
@@ -75,4 +36,4 @@ app.get('/*', function(req, res) {
 });
 
 
-app.listen(3001, () => console.log("listening on port 3001"))
+app.listen(port, () => console.log("listening on port 3001"))

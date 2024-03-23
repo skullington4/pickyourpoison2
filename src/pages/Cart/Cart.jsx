@@ -1,6 +1,7 @@
 import React from 'react';
 import CartItem from '../../components/CartItem/CartItem';
 import axios from 'axios';
+import * as orderService from '../../utilities/order-service.js';
 
 const Cart = ({ cartItems, setCartItems }) => {
     const totalPrice = cartItems.reduce((acc, item) => acc + Number(item.price), 0);
@@ -16,14 +17,13 @@ const Cart = ({ cartItems, setCartItems }) => {
     }
 
     const handleAddCustomDrink = (drink) => {
-        axios.post('http://localhost:3001/orders', drink)
-            console.log(drink)
-            // .then((response) => {
-            //     console.log(response);
-            // })
-            // .catch((error) => {
-            //     console.log(error);
-            // })
+       orderService.createDrink(drink)
+            .then((res) => {
+                console.log(res);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     const handleClearCart = () => {
