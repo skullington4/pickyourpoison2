@@ -113,7 +113,6 @@ export default function Home( { cartItems, setCartItems } ) {
                     <option value="Cinnamon">Garnish: Cinnamon</option>
                     <option value="Sugar">Garnish: Sugar</option>
                     <option value="Salt">Garnish: Salt</option>
-
                 </select>
             </div>
 
