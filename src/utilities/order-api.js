@@ -3,6 +3,7 @@ const BASE_URL = process.env.REACT_APP_API_URL + '/api/orders';
 
 
 export async function getDrinks() {
+    console.log('Made it to order-api.js getDrinks()')
     return await sendRequest(BASE_URL, 'GET');
 }
 

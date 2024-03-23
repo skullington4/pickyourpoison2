@@ -11,6 +11,7 @@ export default async function sendRequest(url, method = 'GET', payload = null) {
     }
     console.log("URL" , url, "options:", options);
     const res = await fetch(url, options);
+    console.log("res", res);
     // res.ok will be false if the status code set is not 2xx
     if (res.ok) return res.json();
     throw new Error('Bad Request');

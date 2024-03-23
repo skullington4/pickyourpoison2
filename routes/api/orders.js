@@ -9,7 +9,6 @@ const prisma = new PrismaClient();
 router.use(cors());
 
 router.get("/", async function (req, res) {
-    console.log("get orders");
     try {
         console.log("get orders");
         const orders = await prisma.order.findMany({
