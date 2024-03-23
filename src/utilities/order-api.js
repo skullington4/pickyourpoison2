@@ -1,5 +1,5 @@
 import sendRequest from "./send-request.js";
-const BASE_URL = '//localhost:3001/api/orders';
+const BASE_URL = process.env.REACT_APP_API_URL + '/api/orders';
 
 
 export async function getDrinks() {
