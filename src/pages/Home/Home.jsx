@@ -8,13 +8,13 @@ export default function Home( { cartItems, setCartItems } ) {
     const [filter, setFilter] = useState('');
 
 
-    useEffect(() => {
+    /* useEffect(() => {
         async function getOrders() {
-          const result = await orderService.getAll();
-          setOrders(result)
+            const result = await orderService.getAll();
+            setOrders(result)
         }
         getOrders()
-    }, [])
+    }, []) */
 
     const handleAddToCart = (order) => {
         const drink = { 

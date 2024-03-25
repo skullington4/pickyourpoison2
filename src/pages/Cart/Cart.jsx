@@ -4,7 +4,7 @@ import axios from 'axios';
 import * as orderService from '../../utilities/order-service.js';
 import { useEffect, useState } from 'react';
 
-const Cart = ({ cartItems, setCartItems }) => {
+export default function Cart ({ cartItems, setCartItems }) {
     const [orders, setOrders] = useState([]);
     const totalPrice = cartItems.reduce((acc, item) => acc + Number(item.price), 0);
     
@@ -79,5 +79,3 @@ const Cart = ({ cartItems, setCartItems }) => {
         </div>
     );
 };
-
-export default Cart;
