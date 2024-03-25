@@ -17,7 +17,7 @@ router.get("/", async function (req, res) {
                 createdAt: "desc"
             }
         });
-        console.log(orders);
+        console.log(orders + "orders");
         res.json(orders);
     } catch (error) {
         console.error(error);
