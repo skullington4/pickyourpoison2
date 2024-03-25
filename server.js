@@ -27,10 +27,6 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 app.use('/api/orders', router);
 
-app.get('/test', (req, res) => {
-  res.set('Cache-Control', 'no-store');
-  res.send('Test route works!');
-});
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX/API requests

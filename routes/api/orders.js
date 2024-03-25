@@ -9,7 +9,6 @@ const prisma = new PrismaClient();
 router.use(cors());
 
 router.get("/", async function (req, res) {
-    console.log("initial api/orders.js get request");
     try {
         console.log("api/orders.js get request");
         const orders = await prisma.order.findMany({
@@ -18,7 +17,6 @@ router.get("/", async function (req, res) {
                 createdAt: "desc"
             }
         });
-        console.log(orders);
         res.json(orders);
     } catch (error) {
         console.error(error);
