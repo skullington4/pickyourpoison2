@@ -10,14 +10,14 @@ router.use(cors());
 
 router.get("/", async function (req, res) {
     try {
-        console.log("get orders");
+        console.log("api/orders.js get request");
         const orders = await prisma.order.findMany({
             take: 20,
             orderBy: {
                 createdAt: "desc"
             }
         });
-        console.log(orders + "orders");
+        console.log(orders);
         res.json(orders);
     } catch (error) {
         console.error(error);
