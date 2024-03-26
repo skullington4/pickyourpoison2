@@ -11,8 +11,6 @@ import glasses from '../../Data/glasses';
 export default function App() {
 
     const [cartItems, setCartItems] = React.useState([]);
-    const [user, setUser] = React.useState(null);
-
 
   return (
     <div className="App">

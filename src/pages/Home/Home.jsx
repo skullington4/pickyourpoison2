@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import React from 'react';
-import axios from 'axios';
 import * as orderService from '../../utilities/order-service.js';
 
 export default function Home( { cartItems, setCartItems } ) {
@@ -117,7 +116,7 @@ export default function Home( { cartItems, setCartItems } ) {
             </div>
 
             {filteredOrders.map((order, index) => (
-                <div className="customeDrinkContainer border" key={index}>
+                <div className="customDrinkContainer border" key={index}>
                     <span className='name'>The "{order.title}" - ${order.price}</span>
                     <span className="desc">Glass: {order.glass}</span>
                     <span className="desc">Spirits: {order.spirits.map((spirit, index) => (

@@ -26,7 +26,7 @@ export default function CartItem ({ item, cartItems, setCartItems }) {
                             <span className="desc">{item.description}</span>
                         </>
                     ) : (
-                        <div className="customeDrinkContainer">
+                        <div className="customCartDrinkContainer">
                             <span className='name'>Custom Drink: {item.name} - ${item.price}</span>
                             <span className="desc">Glass: {item.glass}</span>
                             <span className="desc">Spirits: {item.spirits.map((spirit, index) => (
